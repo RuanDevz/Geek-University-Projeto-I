@@ -30,14 +30,19 @@ input{
     font-size: 1.1em;
     border: none;
     padding: 10px;
-    width: 300px;
+    width: 700px;
 }
 button{
     border: none;
     color: white;
-    padding: 10px;
-    width: 100px;
+    padding: 15px;
+    width: 120px;
     background-color: rgb(105, 105, 240);
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(113, 113, 255);
 }
 
 input:focus{
@@ -51,6 +56,49 @@ input:focus{
 .Lista{
     position: absolute;
     background-color: rgba(255, 255, 255, 0.562);
-    height: 300px;
+    height: 400px;
     width: 90%;
+}
+
+.Lista li{
+    font-size: 1.2em;
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.562);
+    padding: 15px 0px;
+    text-align: center;
+    border: 1px solid #797979;
+}
+
+.containericones{
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    align-items: center;
+}
+
+.fa-check {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    color: green;
+    font-size: 1.5em;
+  }
+  
+  .fa-xmark {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: red;
+    font-size: 1.5em;
+  }
+  
+#vazia{
+    color: red;
+}
+
+::-webkit-scrollbar{
+    display: none;
 }
