@@ -85,6 +85,10 @@ input:focus{
     color: green;
     font-size: 1.5em;
   }
+
+  li{
+    cursor: pointer;
+  }
   
   .fa-xmark {
     position: absolute;
