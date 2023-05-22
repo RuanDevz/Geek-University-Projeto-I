@@ -6,28 +6,27 @@ const vazia = document.getElementById('vazia');
 cadastrar.addEventListener('click', AdicionarTarefa);
 
 function AdicionarTarefa() {
-  const novatarefa = input.value;
+  const novaTarefa = input.value;
 
-  if (novatarefa !== '') {
-    const novoitem = document.createElement('li');
-    const tarefa = document.createElement('span');
-    const check = document.createElement('i');
-    const xmark = document.createElement('i');
+  if (novaTarefa !== '') {
+    const novoItem = document.createElement('li');
+    novoItem.innerText = novaTarefa;
 
-    tarefa.textContent = novatarefa;
-    check.classList.add('fa', 'fa-check');
-    xmark.classList.add('fa', 'fa-xmark');
+    novoItem.addEventListener('click', ExcluirTarefa);
 
-    novoitem.appendChild(tarefa);
-    novoitem.appendChild(check);
-    novoitem.appendChild(xmark);
-    novoitem.classList.add('item');
-
-    lista.appendChild(novoitem);
+    lista.appendChild(novoItem);
 
     input.value = '';
-    vazia.textContent = '';
+    vazia.style.display = 'none';
   } else {
-    vazia.textContent = 'Por favor, escreva uma tarefa';
+    vazia.innerText = 'Digite uma tarefa antes de cadastrar.';
+    vazia.style.display = 'block';
+  }
+}
+
+function ExcluirTarefa() {
+  this.remove();
+  if (lista.childElementCount === 0) {
+    vazia.style.display = 'block';
   }
 }
